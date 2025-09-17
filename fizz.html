@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="in">
+    <button id="show">Show</button>
+    <p class="msg">
+    </p>
+<script>
+    document.getElementById("show").addEventListener("click", function() {
+        let inputValue = document.getElementById("in").value;
+        let msg = document.querySelector(".msg");
+
+        inputValue = Number(inputValue);
+
+        if (inputValue % 3 === 0 && inputValue % 5 === 0) {
+            displayFB();
+        }
+        else if (inputValue % 3 === 0) {
+            displayFizz();
+        }
+        else if (inputValue % 5 === 0) {
+            displayBuzz();
+        }
+        else {
+            displayOdd();
+        }
+
+        function displayFB() {
+            msg.innerHTML = 'FizzBuzz';
+        }
+
+        function displayFizz() {
+            msg.innerHTML = 'Fizz';
+        }
+
+        function displayBuzz() {
+            msg.innerHTML = 'Buzz';
+        }
+
+        function displayOdd() {
+            console.log("Number: " + inputValue);
+        }
+    });
+</script>
+</body>
+</html>
